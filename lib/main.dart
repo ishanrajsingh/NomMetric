@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'firebase_options.dart';
 
 void main() async {
   // Ensures Flutter is ready before we start Firebase [cite: 5]
@@ -8,7 +9,9 @@ void main() async {
 
   // Connects the app to your Firebase project [cite: 5]
   // Note: This will require a 'google-services.json' file to work [cite: 5]
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(
     // ProviderScope is required for Riverpod state management [cite: 55, 62]

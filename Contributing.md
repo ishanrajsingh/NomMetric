@@ -40,24 +40,68 @@ Before contributing, make sure you have the following(and a bit of patience for 
 
 4. Link the project to your own Firebase project
 
-    This project uses **Firebase** as its backend server. Each contributor must connect the app to their own **Firebase Project**.
+  This project uses **Firebase** as its backend server.  
+  Each contributor must connect the app to their own **Firebase Project** in order to run the app locally.
 
-    Follow these steps carefully to set Firebase up:
-    - Go to [Firebase Console](https://console.firebase.google.com/) and sign in using your google account.
+  You can follow **either** of the methods below.
 
-    - Click add project and create a new Firebase project. Project can be named anything, and analytics can be skipped or enabled(either is fine).
+  ### Method 1: Using Firebase Console (Manual)
+  1. Go to the [**Firebase Console**](https://console.firebase.google.com/).
 
-    - After the project is created, add an **Android app**. Name the package same as the `applicationId` from `android/app/build.gradle`. **Do not change the applicationID in the codebase**.
+  2. Sign in using your Google account.
 
-    - Download the generated `google-services.json` file and place it in the `android/app/` directory.
-    
-    - Enable the Firebase services by going to `Build -> Firestore Database`. Create a Database(test mode is fine for development).
+  3. Click **Add project** and create a new Firebase project.
+    - **Project name**: anything
+    - **Google Analytics**: optional (either is fine)
 
-    **Notes**: 
+  4. After the project is created, add an **Android app**:
+    - Use the same package name as `applicationId` from `android/app/build.gradle`- **Do NOT change the applicationId in the codebase**
 
-    1. The `google-services.json` file is different for every Firebase project.
-    2. Do not commit this file; it is already added to `.gitignore`. You don't need to do anything.
-    3. The process is same for every OS.
+  5. Download the generated **`google-services.json`** file.
+
+  6. Place the file inside as `android/app/google-servies.json`.
+
+  7. Enable Firebase services:
+    - Go to **Build → Firestore Database**
+    - Click **Create database**
+    - Select **Test mode** (recommended for development)
+
+
+  ### Method 2: Using FlutterFire (Recommended)
+  FlutterFire automates Firebase configuration and supports multiple platforms.
+
+  #### Step 1: Install FlutterFire CLI (all OS)
+  Run this command in your terminal:
+
+    dart pub global activate flutterfire_cli
+
+  If `flutterfire` command is not founf, make sure you add Dart's global binaries to your `PATH` by:
+  - **Linux/MacOS**:
+    ```bash
+    export PATH="$PATH:$HOME/.pub-cache/bin"
+    ```
+  - **Windows**:
+    ```bash
+    setx PATH "%PATH%;%LOCALAPPDATA%\Pub\Cache\bin"
+    ```
+
+  #### Step 2:Configure Firebase
+  From the root of the project folder run :
+  ```bash
+  flutterfire configure
+  ```
+  During the interactive setup:
+  - Select the Firebase project you created
+  - Choose the platforms you want to support  
+    (Android is required, Web is recommended)
+  - Accept the default options unless you know what you are changing
+
+  After successful configuration, FlutterFire will automatically generate the:
+  - `lib/firebase_options.dart` file.
+  - Platform-specific Firebase configuration files
+
+    These files are required for Firebase to work correctly across platforms.
+
 
 5. Verify your setup with
     ``` bash
