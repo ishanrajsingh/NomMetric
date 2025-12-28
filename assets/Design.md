@@ -60,3 +60,8 @@ It **does not** contain any details regarding visual designs yet.
 - **Contributor:** Ishan Raj Singh 
 - **Design Link:** https://www.figma.com/make/1i5d6pfFL7HYHHqwspgGGd/Design-App-Logo-and-Splash-Screen?fullscreen=1 
 - **Notes:** The design is minimal, professional, and perfectly suited for a college mess tracking app 
+
+
+ **Contributor:** Omdeep Masram
+ **Design Link:** https://www.figma.com/design/fqaRKKB9JuYHxFqjn04uHf/Untitled?node-id=0-1&t=AWOHdXknzkvxDJPv-1
+ **Notes:** simple design for login and register screen NO AIs USED!
