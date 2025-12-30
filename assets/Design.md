@@ -60,7 +60,7 @@ It **does not** contain any details regarding visual designs yet.
 - **Design Link:** https://www.figma.com/make/1i5d6pfFL7HYHHqwspgGGd/Design-App-Logo-and-Splash-Screen?fullscreen=1 
 - **Notes:** The design is minimal, professional, and perfectly suited for a college mess tracking app
 
--  **Contributor:** Sujal kshatri 
+- **Contributor:** Sujal kshatri 
 - **Design Link:** https://www.figma.com/design/MHvNzOcN0nL1l7vn2tVscm/Cupid-Arrow-Dating-App--iOS-Android-UI-UX--Community-?node-id=0-1&t=SoXFZG9JW4jyBY6m-1 
 - **Notes:** The design included logo and splash screen which is minimal and professional. 
 
