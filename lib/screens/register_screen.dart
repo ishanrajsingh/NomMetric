@@ -11,7 +11,6 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
@@ -58,7 +57,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   decoration: InputDecoration(
                     labelText: "Enter Your Name",
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    ),
                   ),
                 ),
                 SizedBox(height: 15.0),
@@ -69,7 +69,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     labelText: "Enter Your Email / Roll no.",
                     hintText: "example@gmail.com",
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    ),
                   ),
                 ),
                 SizedBox(height: 15.0),
@@ -80,7 +81,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     labelText: "Enter Your Password",
                     suffix: Icon(CupertinoIcons.eye_solid),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    ),
                   ),
                   obscureText: true,
                 ),
@@ -92,34 +94,37 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     labelText: "Confirm Password",
                     suffix: Icon(CupertinoIcons.eye_solid),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    ),
                   ),
                   obscureText: true,
                 ),
                 SizedBox(height: 20.0),
                 // Sign Up Button
                 ElevatedButton(
-                  onPressed: () async{
-                    if(passwordController.text != confirmPasswordController.text){
+                  onPressed: () async {
+                    if (passwordController.text !=
+                        confirmPasswordController.text) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text("Passwords do not match")),
                       );
                       return;
                     }
-                    
+
                     try {
-                      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                        email: emailController.text.trim(),
-                        password: passwordController.text.trim()
-                      );
+                      await FirebaseAuth.instance
+                          .createUserWithEmailAndPassword(
+                            email: emailController.text.trim(),
+                            password: passwordController.text.trim(),
+                          );
                       Navigator.pushReplacement(
-                        context, 
-                        MaterialPageRoute(builder:  (context) => LoginScreen())
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
                       );
                     } catch (e) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(e.toString())),
-                      );
+                      ScaffoldMessenger.of(
+                        context,
+                      ).showSnackBar(SnackBar(content: Text(e.toString())));
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -136,16 +141,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                 ),
 
-                
                 SizedBox(height: 16.0),
                 // Already have an account link
                 TextButton(
                   onPressed: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LoginScreen(),
-                        ));
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
                   },
                   child: Text.rich(
                     TextSpan(

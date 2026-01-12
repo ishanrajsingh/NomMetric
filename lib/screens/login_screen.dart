@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nommetric/home.dart';
+import 'package:nommetric/app_home.dart';
 import 'package:nommetric/screens/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -12,7 +12,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -93,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 32.0),
                 ElevatedButton(
-                  onPressed: () async{
+                  onPressed: () async {
                     try {
                       await FirebaseAuth.instance.signInWithEmailAndPassword(
                         email: emailController.text.trim(),
@@ -102,20 +101,20 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (_) => Home()),
+                        MaterialPageRoute(builder: (_) => const AppHome()),
                       );
                     } catch (e) {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text("Invalid credentials")),
+                        const SnackBar(content: Text("Invalid credentials")),
                       );
                     }
                   },
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
                     backgroundColor: Color(0xff0E64D2),
-                    minimumSize: Size(double.infinity, 48), // Full-width button
+                    minimumSize: Size(double.infinity, 48),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8), // Rounded corners
+                      borderRadius: BorderRadius.circular(8),
                     ),
                   ),
                   child: Text(
