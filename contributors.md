@@ -42,6 +42,7 @@
 | Abhigyan Tiwari | Abh-igyan | NIT Silchar | 2412124 | 1 |
 | Devanshu Chotiya | devanshuwebd | IIT Dhanbad | 24je0396 | 1 |
 | Dharshini D | Dharshin1|CIT|24CS0202|1|
+| Aakriti Singh| AakritiSingh05 | BV | BTBTC24128 |1|
 
 <!-- ADD ABOVE THIS-->
 <!--example |P.Diddy | KoveLids |Reyansh College| IIT2024069| 0|>
