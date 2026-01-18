@@ -44,6 +44,7 @@
 | Dharshini D | Dharshin1|CIT|24CS0202|1|
 | Savan Modha | CoderMS07 | LDCE | 6070 | 1 | 
 | Aakriti Singh| AakritiSingh05 | BV | BTBTC24128 |1|
+| Soham Agarwal| SohamSDA | IIIT V | 202452332 |1|
 
 <!-- ADD ABOVE THIS-->
 <!--example |P.Diddy | KoveLids |Reyansh College| IIT2024069| 0|>
